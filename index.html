@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology - Ramana_K (E22ASL304)</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Global Styles */
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f39c12;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #2c3e50;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            background-color: #3498db;
+        }
+
+        .nav-menu li.active a {
+            background-color: #2980b9;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 30px 0;
+            min-height: calc(100vh - 180px);
+        }
+
+        .content-section {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        h3 {
+            color: #3498db;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e6f7ff;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .nav-menu li {
+                text-align: center;
+            }
+        }
+
+        /* Code Block Styles */
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <<header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" style="height: 50px;"> <!-- Adjust the height as needed -->
+                Web <span>Technology</span>
+            </div>
+            <div class="student-info">Ramana_K (E22ASL304)</div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="nav-menu container">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#syllabus">Syllabus</a></li>
+            <li><a href="#theory">Theory Notes</a></li>
+            <li><a href="#lab">Lab Manuals</a></li>
+            <li><a href="#referral">Referral</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <h2>Welcome to Web Technology</h2>
+            <p>This website serves as a comprehensive resource for Web Technology course materials, covering essential topics for modern web development.</p>
+            
+            <h3>About Web Technology</h3>
+            <p>Web technology refers to the multitude of technologies and tools that are utilized in the process of communication between different types of devices over the internet. It enables the delivery of web content and the creation of interactive web applications.</p>
+            
+            <h3>Key Components</h3>
+            <ul>
+                <li><strong>HTML (HyperText Markup Language):</strong> The standard markup language for creating web pages.</li>
+                <li><strong>CSS (Cascading Style Sheets):</strong> Used for describing the presentation of a document written in HTML.</li>
+                <li><strong>JavaScript:</strong> A programming language that enables interactive web pages.</li>
+                <li><strong>PHP:</strong> A server-side scripting language designed for web development.</li>
+                <li><strong>MySQL:</strong> A relational database management system used with web applications.</li>
+                <li><strong>Perl:</strong> A highly capable, feature-rich programming language with over 30 years of development.</li>
+            </ul>
+            
+            <h3>Importance of Web Technologies</h3>
+            <p>In today's digital age, web technologies form the backbone of all websites and web applications. They enable businesses to reach global audiences, provide platforms for e-commerce, facilitate communication, and offer services that were unimaginable just a few decades ago.</p>
+            
+            <div style="background-color: #e8f4fc; padding: 20px; border-radius: 5px; margin-top: 30px;">
+                <h3 style="color: #2c3e50;">Did You Know?</h3>
+                <p>The first website ever created was by Tim Berners-Lee in 1991. It explained what the World Wide Web was and how to use it.</p>
+            </div>
+        </section>
+
+        <!-- Syllabus Section -->
+        <section id="syllabus" class="content-section">
+            <h2>Web Technology Syllabus</h2>
+            <p>Below is the detailed syllabus for the Web Technology course covering HTML, CSS, Perl, PHP, and MySQL.</p>
+            
+            <h3>HTML Syllabus</h3>
+            <table>
+                <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>HTML Basics</td>
+                    <td>Structure of HTML document, tags, attributes</td>
+                </tr>
+                <tr>
+                    <td>Text Formatting</td>
+                    <td>Headings, paragraphs, lists, formatting tags</td>
+                </tr>
+                <tr>
+                    <td>Links & Images</td>
+                    <td>Anchor tags, image tags, paths</td>
+                </tr>
+                <tr>
+                    <td>Tables</td>
+                    <td>Creating tables, rowspan, colspan</td>
+                </tr>
+                <tr>
+                    <td>Forms</td>
+                    <td>Form elements, input types, form attributes</td>
+                </tr>
+                <tr>
+                    <td>HTML5 Features</td>
+                    <td>Semantic elements, multimedia, canvas</td>
+                </tr>
+            </table>
+            
+            <h3>CSS Syllabus</h3>
+            <table>
+                <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>CSS Basics</td>
+                    <td>Syntax, selectors, ways to include CSS</td>
+                </tr>
+                <tr>
+                    <td>Box Model</td>
+                    <td>Margin, border, padding, content</td>
+                </tr>
+                <tr>
+                    <td>Positioning</td>
+                    <td>Static, relative, absolute, fixed</td>
+                </tr>
+                <tr>
+                    <td>Flexbox & Grid</td>
+                    <td>Modern layout techniques</td>
+                </tr>
+                <tr>
+                    <td>Responsive Design</td>
+                    <td>Media queries, viewport</td>
+                </tr>
+                <tr>
+                    <td>CSS3 Features</td>
+                    <td>Transitions, animations, transforms</td>
+                </tr>
+            </table>
+            
+            <h3>Perl Syllabus</h3>
+            <ul>
+                <li>Introduction to Perl: History, features, installation</li>
+                <li>Basic syntax: Variables, data types, operators</li>
+                <li>Control structures: Conditionals, loops</li>
+                <li>Subroutines and modules</li>
+                <li>File handling</li>
+                <li>Regular expressions</li>
+                <li>CGI programming with Perl</li>
+            </ul>
+            
+            <h3>PHP Syllabus</h3>
+            <ol>
+                <li>PHP Introduction: Syntax, variables, echo/print</li>
+                <li>Data types, operators, conditionals, loops</li>
+                <li>Functions, arrays, superglobals</li>
+                <li>Form handling, validation</li>
+                <li>File handling, cookies, sessions</li>
+                <li>Object-oriented PHP</li>
+                <li>PHP with MySQL</li>
+            </ol>
+            
+            <h3>MySQL Syllabus</h3>
+            <table>
+                <tr>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Database Fundamentals</td>
+                    <td>RDBMS concepts, SQL basics</td>
+                </tr>
+                <tr>
+                    <td>MySQL Basics</td>
+                    <td>Installation, data types, creating databases</td>
+                </tr>
+                <tr>
+                    <td>CRUD Operations</td>
+                    <td>CREATE, READ, UPDATE, DELETE</td>
+                </tr>
+                <tr>
+                    <td>Joins & Relationships</td>
+                    <td>INNER JOIN, LEFT JOIN, RIGHT JOIN</td>
+                </tr>
+                <tr>
+                    <td>Advanced Queries</td>
+                    <td>Subqueries, aggregate functions</td>
+                </tr>
+                <tr>
+                    <td>Security</td>
+                    <td>SQL injection prevention</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Theory Notes Section -->
+        <section id="theory" class="content-section">
+            <h2>Theory Notes</h2>
+            <a href="DECAP472_WEB_TECHNOLOGIES.pdf" download>Download Theory Notes</a>
+            <p>Detailed theoretical concepts for Web Technology subjects.</p>
+            
+            <h3>HTML Theory</h3>
+            <p>HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
+            <a href="Web Technologies.pdf" download>Download Theory Notes</a>
+            <p>Key concepts:</p>
+            <ul>
+                <li>HTML documents are made up of elements that define the structure of a web page</li>
+                <li>Elements are represented by tags like &lt;html&gt;, &lt;head&gt;, &lt;body&gt;</li>
+                <li>Attributes provide additional information about elements</li>
+                <li>HTML5 introduced semantic elements like &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;</li>
+            </ul>
+            
+            <h4>Sample HTML Code:</h4>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            
+            <h3>CSS Theory</h3>
+            <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+            <p>Key concepts:</p>
+            <ul>
+                <li>Separation of content (HTML) from presentation (CSS)</li>
+                <li>Selectors target HTML elements for styling</li>
+                <li>The box model: margin, border, padding, content</li>
+                <li>Responsive design principles</li>
+            </ul>
+            
+            <h4>Sample CSS Code:</h4>
+            <pre><code>body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}</code></pre>
+            
+            <h3>Perl Theory</h3>
+            <p>Perl is a family of high-level, general-purpose, interpreted, dynamic programming languages. Perl was originally developed by Larry Wall in 1987 as a general-purpose Unix scripting language to make report processing easier.</p>
+            <p>Key features:</p>
+            <ul>
+                <li>Powerful text processing capabilities</li>
+                <li>Supports both procedural and object-oriented programming</li>
+                <li>CPAN - Comprehensive Perl Archive Network with thousands of modules</li>
+                <li>Regular expression support built into the syntax</li>
+            </ul>
+            
+            <h4>Sample Perl Code:</h4>
+            <pre><code>#!/usr/bin/perl
+use strict;
+use warnings;
+
+print "Content-type: text/html\n\n";
+print "&lt;html&gt;&lt;body&gt;";
+print "&lt;h1&gt;Hello, World!&lt;/h1&gt;";
+print "&lt;/body&gt;&lt;/html&gt;";
+
+my $name = "Ramana";
+print "Hello, $name!\n";</code></pre>
+            
+            <h3>PHP Theory</h3>
+            <p>PHP is a popular general-purpose scripting language that is especially suited to web development. It was originally created by Rasmus Lerdorf in 1994 and is now maintained by The PHP Group.</p>
+            <p>Key features:</p>
+            <ul>
+                <li>Server-side scripting language</li>
+                <li>Can be embedded directly into HTML</li>
+                <li>Supports object-oriented programming</li>
+                <li>Extensive database support</li>
+                <li>Large standard library</li>
+            </ul>
+            
+            <h4>Sample PHP Code:</h4>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+echo "&lt;h1&gt;Hello, World!&lt;/h1&gt;";
+
+$name = "Ramana";
+echo "Welcome, " . $name . "!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            
+            <h3>MySQL Theory</h3>
+            <p>MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language.</p>
+            <p>Key concepts:</p>
+            <ul>
+                <li>Relational database model</li>
+                <li>Tables, rows, columns</li>
+                <li>Primary keys, foreign keys</li>
+                <li>SQL queries: SELECT, INSERT, UPDATE, DELETE</li>
+                <li>Indexes for performance optimization</li>
+            </ul>
+            
+            <h4>Sample SQL Code:</h4>
+            <pre><code>-- Create a database
+CREATE DATABASE web_tech;
+
+-- Create a table
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    roll_no VARCHAR(20) UNIQUE,
+    email VARCHAR(100) UNIQUE
+);
+
+-- Insert data
+INSERT INTO students (name, roll_no, email)
+VALUES ('Ramana', 'E22ASL304', 'ramana@example.com');
+
+-- Query data
+SELECT * FROM students WHERE roll_no = 'E22ASL304';</code></pre>
+        </section>
+
+        <!-- Lab Manuals Section -->
+        <section id="lab" class="content-section">
+            <h2>Lab Manuals</h2>
+            <a href="Web Technologies Lab Manual.pdf" download>Download Theory Notes</a>
+            <p>Practical exercises and lab manuals for Web Technology subjects.</p>
+            
+            <h3>HTML Lab Exercises</h3>
+            <a href="WT LAB MANUAL.pdf" download>Download Theory Notes</a>
+            <ol>
+                <li>
+                    <strong>Basic HTML Page</strong>
+                    <p>Create a simple HTML page with heading, paragraph, and image.</p>
+                </li>
+                <li>
+                    <strong>HTML Forms</strong>
+                    <p>Design a registration form with various input types.</p>
+                </li>
+                <li>
+                    <strong>HTML Tables</strong>
+                    <p>Create a timetable using HTML tables with proper formatting.</p>
+                </li>
+                <li>
+                    <strong>Semantic HTML</strong>
+                    <p>Build a webpage using HTML5 semantic elements.</p>
+                </li>
+                <li>
+                    <strong>Multimedia</strong>
+                    <p>Embed video and audio in an HTML page.</p>
+                </li>
+            </ol>
+            
+            <h3>CSS Lab Exercises</h3>
+            <ol>
+                <li>
+                    <strong>Basic Styling</strong>
+                    <p>Apply CSS to style text, colors, and backgrounds.</p>
+                </li>
+                <li>
+                    <strong>Box Model</strong>
+                    <p>Demonstrate margin, border, and padding with examples.</p>
+                </li>
+                <li>
+                    <strong>Layout Design</strong>
+                    <p>Create a multi-column layout using CSS.</p>
+                </li>
+                <li>
+                    <strong>Responsive Design</strong>
+                    <p>Make a webpage responsive using media queries.</p>
+                </li>
+                <li>
+                    <strong>CSS Animations</strong>
+                    <p>Create simple animations using CSS3.</p>
+                </li>
+            </ol>
+            
+            <h3>Perl Lab Exercises</h3>
+            <ol>
+                <li>
+                    <strong>First Perl Program</strong>
+                    <p>Write and execute a simple "Hello World" Perl script.</p>
+                </li>
+                <li>
+                    <strong>Variables and Operators</strong>
+                    <p>Demonstrate different variable types and operators.</p>
+                </li>
+                <li>
+                    <strong>Control Structures</strong>
+                    <p>Write programs using conditionals and loops.</p>
+                </li>
+                <li>
+                    <strong>Regular Expressions</strong>
+                    <p>Implement pattern matching using regex.</p>
+                </li>
+                <li>
+                    <strong>File Handling</strong>
+                    <p>Read from and write to files using Perl.</p>
+                </li>
+            </ol>
+            
+            <h3>PHP Lab Exercises</h3>
+            <ol>
+                <li>
+                    <strong>Basic PHP Page</strong>
+                    <p>Create a PHP page that displays server information.</p>
+                </li>
+                <li>
+                    <strong>Form Processing</strong>
+                    <p>Process form data using PHP.</p>
+                </li>
+                <li>
+                    <strong>Sessions and Cookies</strong>
+                    <p>Implement user authentication using sessions.</p>
+                </li>
+                <li>
+                    <strong>File Upload</strong>
+                    <p>Create a script to handle file uploads.</p>
+                </li>
+                <li>
+                    <strong>Database Connection</strong>
+                    <p>Connect to MySQL database and display records.</p>
+                </li>
+            </ol>
+            
+            <h3>MySQL Lab Exercises</h3>
+            <ol>
+                <li>
+                    <strong>Database Creation</strong>
+                    <p>Create a database and tables with proper constraints.</p>
+                </li>
+                <li>
+                    <strong>CRUD Operations</strong>
+                    <p>Perform Create, Read, Update, Delete operations.</p>
+                </li>
+                <li>
+                    <strong>Joins</strong>
+                    <p>Write queries using different types of joins.</p>
+                </li>
+                <li>
+                    <strong>Aggregate Functions</strong>
+                    <p>Use GROUP BY, HAVING with aggregate functions.</p>
+                </li>
+                <li>
+                    <strong>Stored Procedures</strong>
+                    <p>Create and execute stored procedures.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Referral Section -->
+        <section id="referral" class="content-section">
+            <h2>Referral Resources</h2>
+            <p>Recommended resources for further learning in Web Technologies.</p>
+            
+            <h3>HTML Resources</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Documentation</a> - Comprehensive reference</li>
+                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a> - Beginner-friendly tutorials</li>
+                <li><a href="https://html.spec.whatwg.org/" target="_blank">HTML Living Standard</a> - Official specification</li>
+                <li><a href="https://html5doctor.com/" target="_blank">HTML5 Doctor</a> - Articles on HTML5 elements</li>
+            </ul>
+            
+            <h3>CSS Resources</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Documentation</a> - Complete CSS reference</li>
+                <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> - Tips, tricks, and techniques</li>
+                <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools CSS Tutorial</a> - Step-by-step learning</li>
+                <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a> - Game for learning Flexbox</li>
+            </ul>
+            
+            <h3>Perl Resources</h3>
+            <ul>
+                <li><a href="https://www.perl.org/" target="_blank">Perl.org</a> - Official Perl website</li>
+                <li><a href="https://learn.perl.org/" target="_blank">Learn Perl</a> - Free online books and tutorials</li>
+                <li><a href="https://www.perltutorial.org/" target="_blank">Perl Tutorial</a> - Comprehensive guide</li>
+                <li><a href="https://metacpan.org/" target="_blank">MetaCPAN</a> - Perl module repository</li>
+            </ul>
+            
+            <h3>PHP Resources</h3>
+            <ul>
+                <li><a href="https://www.php.net/" target="_blank">PHP.net</a> - Official documentation</li>
+                <li><a href="https://www.w3schools.com/php/" target="_blank">W3Schools PHP Tutorial</a> - Beginner's guide</li>
+                <li><a href="https://laracasts.com/series/php-for-beginners" target="_blank">Laracasts PHP for Beginners</a> - Video tutorials</li>
+                <li><a href="https://phptherightway.com/" target="_blank">PHP The Right Way</a> - Best practices</li>
+            </ul>
+            
+            <h3>MySQL Resources</h3>
+            <ul>
+                <li><a href="https://dev.mysql.com/doc/" target="_blank">MySQL Documentation</a> - Official docs</li>
+                <li><a href="https://www.w3schools.com/sql/" target="_blank">W3Schools SQL Tutorial</a> - SQL basics</li>
+                <li><a href="https://sqlzoo.net/" target="_blank">SQL Zoo</a> - Interactive SQL exercises</li>
+                <li><a href="https://www.mysqltutorial.org/" target="_blank">MySQL Tutorial</a> - Comprehensive guide</li>
+            </ul>
+            
+            <h3>Recommended Books</h3>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Subject</th>
+                </tr>
+                <tr>
+                    <td>HTML and CSS: Design and Build Websites</td>
+                    <td>Jon Duckett</td>
+                    <td>HTML/CSS</td>
+                </tr>
+                <tr>
+                    <td>Learning Perl</td>
+                    <td>Randal L. Schwartz</td>
+                    <td>Perl</td>
+                </tr>
+                <tr>
+                    <td>PHP and MySQL Web Development</td>
+                    <td>Luke Welling</td>
+                    <td>PHP/MySQL</td>
+                </tr>
+                <tr>
+                    <td>JavaScript and JQuery: Interactive Front-End Web Development</td>
+                    <td>Jon Duckett</td>
+                    <td>JavaScript</td>
+                </tr>
+                <tr>
+                    <td>High Performance MySQL</td>
+                    <td>Baron Schwartz</td>
+                    <td>MySQL</td>
+                </tr>
+            </table>
+            
+            <h3>Online Learning Platforms</h3>
+            <ul>
+                <li><a href="https://www.coursera.org/" target="_blank">Coursera</a> - University-level courses</li>
+                <li><a href="https://www.udemy.com/" target="_blank">Udemy</a> - Affordable video courses</li>
+                <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a> - Interactive coding lessons</li>
+                <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a> - Free coding curriculum</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; Web Technology - Ramana_K (E22ASL304). All rights reserved.</p>
+            <p>Educational purpose only for EGSPEC Students.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-menu li a');
+            
+            // Get all content sections
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target section ID from href attribute
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Hide all content sections
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show the target section
+                    document.getElementById(targetId).classList.add('active');
+                    
+                    // Update active state in navigation
+                    navLinks.forEach(navLink => {
+                        navLink.parentElement.classList.remove('active');
+                    });
+                    this.parentElement.classList.add('active');
+                });
+            });
+            
+            // SQL Database Structure (for demonstration)
+            // In a real application, this would be on the server side
+            const databaseStructure = {
+                tables: [
+                    {
+                        name: "students",
+                        columns: [
+                            { name: "id", type: "INT", primaryKey: true, autoIncrement: true },
+                            { name: "name", type: "VARCHAR(100)", notNull: true },
+                            { name: "roll_no", type: "VARCHAR(20)", unique: true },
+                            { name: "email", type: "VARCHAR(100)", unique: true },
+                            { name: "course", type: "VARCHAR(50)" }
+                        ]
+                    },
+                    {
+                        name: "courses",
+                        columns: [
+                            { name: "course_id", type: "INT", primaryKey: true },
+                            { name: "course_name", type: "VARCHAR(100)", notNull: true },
+                            { name: "duration", type: "VARCHAR(20)" }
+                        ]
+                    }
+                ]
+            };
+            
+            // You could use this structure to generate SQL queries or display database info
+            console.log("Database structure:", databaseStructure);
+            
+            // Sample function to generate CREATE TABLE statements
+            function generateCreateTableStatements(database) {
+                return database.tables.map(table => {
+                    let columns = table.columns.map(col => {
+                        let columnDef = `${col.name} ${col.type}`;
+                        if (col.primaryKey) columnDef += " PRIMARY KEY";
+                        if (col.autoIncrement) columnDef += " AUTO_INCREMENT";
+                        if (col.notNull) columnDef += " NOT NULL";
+                        if (col.unique) columnDef += " UNIQUE";
+                        return columnDef;
+                    }).join(",\n    ");
+                    
+                    return `CREATE TABLE ${table.name} (\n    ${columns}\n);`;
+                }).join("\n\n");
+            }
+            
+            // Example usage:
+            const createStatements = generateCreateTableStatements(databaseStructure);
+            console.log("Generated SQL:\n", createStatements);
+        });
+    </script>
+</body>
+</html>
